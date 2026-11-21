@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="UTF=8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>CO₂れいでぃお</title>
         <meta name="description" content="CO₂れいでぃお公式サイト">
@@ -68,6 +68,7 @@
                 display: flex;
                 justify-content: center;
                 text-align: center;
+                padding-top: 2vh;
             }
 
             #icon {
@@ -75,21 +76,43 @@
                 width: 70%;
             }
 
+            #latest {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                border-style: solid;
+                border-width: 0px;
+                margin: 8vw;
+                border-radius: 7vw;
+                background-color: rgba(24, 41, 73, 1);
+                color: #ffffff;
+            }
+
+            #latest h2 {
+                font-size: 5vw;
+                text-align: center;
+            }
+            
         </style>
     </head>
     <body id="top">
-        <header>
-            <a href="#top"><img src="https://gekkori-11.github.io/co2radio/images/logo_website.png" alt="CO₂れいでぃお_logo" width="25%"></a>
-            <nav>
-                <a href="#top">トップ</a>
-                <a href="#about">番組について</a>
-                <a href="#bosyu">各種募集</a>
-            </nav> 
-        </header>
-        <main>
-            <img src="https://gekkori-11.github.io/co2radio/images/icon.png" id="icon" alt="CO₂れいでぃお_icon">
-            <br>
-            <h1>CO₂れいでぃおは、<br>gekkoriがパーソナリティーを<br>務める雑談ラジオ番組です</h1>
-        </main>
+            <header>
+                <a href="#top"><img src="https://gekkori-11.github.io/co2radio/images/logo_website.png" alt="CO₂れいでぃお_logo" width="25%"></a>
+                <nav>
+                    <a href="#top">トップ</a>
+                    <a href="#about">番組について</a>
+                    <a href="#bosyu">各種募集</a>
+                </nav> 
+            </header>
+            <main>
+                <img src="https://gekkori-11.github.io/co2radio/images/icon.png" id="icon" alt="CO₂れいでぃお_icon">
+                <br>
+                <h1>「CO₂れいでぃお」は <br>gekkoriがパーソナリティを<br>務める雑談ラジオ番組です</h1>
+            </main>
+            <div id="latest">
+                <h2>Latest Episode</h2>
+                <iframe src="https://drive.google.com/file/d/1sWKkFHNTgstRxOzEE2bOMAg3bYDVRMwb/preview"></iframe>
+            </div>
+        </div>
     </body>
 </html>
