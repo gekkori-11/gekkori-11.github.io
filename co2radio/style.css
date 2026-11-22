@@ -294,7 +294,7 @@ main h1 {
 }
 
 #pin p {
-    font-size: 2.5vw;
+    font-size: 3.5vw;
     width: 60%;
     color: black;
     margin: 0;
@@ -312,7 +312,7 @@ main h1 {
     justify-content: center;
     background-color: rgb(24, 41, 73);
     padding: 2vw;
-    font-size: 2vw;
+    font-size: 3vw;
 }
 
 #guest_title {
