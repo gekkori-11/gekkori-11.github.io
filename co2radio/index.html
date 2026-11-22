@@ -22,14 +22,15 @@
             }
 
             header {
-                background-color: rgba(24, 41, 73, 0.3);
-                backdrop-filter: blur(8px);
+                background-color: rgba(24, 41, 73, 0.6);
+                backdrop-filter: blur(50px);
                 padding: 3%;
                 display: flex;
                 align-items: center;
                 position: sticky;
                 top: 0;
                 border-color:darkgrey;
+                z-index: 1000;
             }
 
             body {
@@ -142,6 +143,7 @@
                 font-size: 8vw;
                 text-align: center;
                 color: white;
+                line-height: 0.3;
             }
 
             #latest p {
@@ -163,6 +165,7 @@
                 border-width: 1px;
                 border-bottom-style: solid;
                 border-color: rgb(58, 60, 83);
+                scroll-margin-top: 23vw;
             }
 
             #aboutus h2 {
@@ -192,6 +195,7 @@
             .info-row {
                 display: flex;
                 width: 100%;
+                margin-bottom: 9vw;
             }
 
             .info h2 {
@@ -206,6 +210,68 @@
                 padding-bottom: 0.7vw;
             }
 
+            #kikaku {
+                scroll-margin-top: 23vw;
+            }
+
+            #contents {
+                display: flex;
+                align-items: center;
+                gap: 2vw;
+                padding-inline: 5vw;
+            }
+
+            #contents h1 {
+                font-size: 7vw;
+                text-align: left;
+                margin: 0;
+            }
+
+            #contents h2 {
+                padding-top: 2.5vw;
+                font-size: 3vw;
+                margin: 0;
+            }
+
+            .radio_contents {
+                position: relative;
+                margin-top: 4vw;
+                width: 80%;
+                margin-inline: auto;
+                background-color: rgba(24, 41, 73, 0.3);
+                backdrop-filter: blur(8px);
+                padding-inline: 7vw;
+                padding-top: 5vw;
+                line-height: 0.4;
+            }
+
+            .radio_contents h2 {
+                font-size: 2.5vw;
+                font-weight: 100;
+            }
+
+            .radio_contents h1 {
+                font-size: 5vw;
+            }
+
+            .radio_contents p {
+                font-size: 3vw;
+                margin-top: 7vw;
+                padding-bottom: 7vw;
+                line-height: 1.7;
+            }
+
+            .radio_contents a {
+                position: absolute;
+                top: 6vw;
+                right: 6vw;
+                background-color: white;
+                color: #000000;
+                padding: 3vw 2vw;
+                text-decoration: none;
+                font-size: 3vw;
+            }
+
         </style>
     </head>
     <body id="top">
@@ -213,8 +279,8 @@
                 <a href="#top"><img src="https://gekkori-11.github.io/co2radio/images/logo_website.png" alt="CO₂れいでぃお_logo" width="25%"></a>
                 <nav id="menu">
                     <a href="#top">トップ</a>
-                    <a href="#about">番組について</a>
-                    <a href="#bosyu">各種募集</a>
+                    <a href="#aboutus">番組について</a>
+                    <a href="#kikaku">各種募集</a>
                 </nav> 
             </header>
             <main>
@@ -239,10 +305,33 @@
                 </div>
                 <div class="info" style="border-left-style: solid; border-width: 1px; border-color: rgb(58, 60, 83);">
                     <h2>——— 配信情報 ———</h2>
-                    <p style="line-height: 1.5;">Every Suturday 20:00~<br>On YouTube Live</p>
+                    <p style="line-height: 1.5;">毎週土曜 20:00~<br>On YouTube Live</p>
                 </div>
             </div>
-
+            <div id="kikaku">
+                <div id="contents">
+                    <h1>CONTENTS</h1>
+                    <h2>— 番組企画 —</h2>
+                </div>
+                <div class="radio_contents">
+                    <h2>01 / MUSIC</h2><br>
+                    <h1>リクエスト曲</h1>
+                    <a href="https://forms.gle/jACLkdjQcvMULKSy7">リクエスト曲募集　↗</a>
+                    <p>リスナーから募集したリクエスト曲を放送します。</p>
+                </div>
+                <div class="radio_contents">
+                    <h2>02 / MESSAGE</h2><br>
+                    <h1>お便りのコーナー</h1>
+                    <a href="https://forms.gle/jACLkdjQcvMULKSy7">お便り募集　↗</a>
+                    <p>リスナーからのお便りを紹介。パーソナリティーへの質問や報告など、どんな内容でも気軽に送ってください。</p>
+                </div>
+                <div class="radio_contents">
+                    <h2>03 / SPECIAL CONTENTS</h2><br>
+                    <h1>特別企画</h1>
+                    <a href="https://forms.gle/jACLkdjQcvMULKSy7">特別企画　↗</a>
+                    <p>不定期に開催する特別な企画。いつもとはひと味違うコンテンツをお届けしています。</p>
+                </div>
+            </div>
             <div id="latest">
                 <h2>Latest Episode</h2>
                 <p>【第9.5夜】降板するのかな？【しおれい】</p>
