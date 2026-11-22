@@ -11,331 +11,78 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
-        <style>
-
-            :root {
-                font-size: medium;
-            }
-
-            html {
-                scroll-behavior: smooth;
-            }
-
-            header {
-                background-color: rgba(24, 41, 73, 0.6);
-                backdrop-filter: blur(50px);
-                padding: 3%;
-                display: flex;
-                align-items: center;
-                position: sticky;
-                top: 0;
-                border-color:darkgrey;
-                z-index: 1000;
-            }
-
-            body {
-                background-color: #051636;
-                background-image:
-                    linear-gradient(rgba(255, 255, 255, 0.05) 2px, transparent 2px),
-                    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
-                background-size: 10vw 10vw;
-                font-family: "Zen Maru Gothic", sans-serif;
-                font-size: large;
-                color: #ffffff;
-                margin: 0;
-                }
-
-            #menu {
-                position:absolute;
-                right: 9vw;;
-                display: flex;
-                gap: clamp(32px,5vw,100px)
-            }
-
-            #menu a {
-                color: #ffffff;
-                text-decoration: none;
-                font-size: clamp(16px,3.5vw,64px);
-            }
-
-            main {
-                flex: 1;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                padding-top: 10%;
-            }
-
-            main h1 {
-                font-size: 4.5vw;
-                width: 80%;
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                margin-top: 0;
-                padding-bottom: 1vh;
-            }
-
-            #icon {
-                border-radius: 20%;
-                width: 70%;
-                margin-bottom: 1vw;
-            }
-
-            .about {
-                margin-top: 0;
-                padding-inline: 5vw;
-                align-items: center;
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                font-size: 4vw;
-                padding: 5vw;
-            }
-
-            #top_btn {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 7vw;
-                margin-bottom: 10vw;
-            }
-
-            #urls_btn {
-                background-color: white;
-                font-size: 3.5vw;
-                padding: 3.5vw;
-                text-decoration: none;
-                border-radius: 3vw;
-                color: black;
-            }
-
-            #kikaku_btn {
-                background-color: none;
-                font-size: 3.5vw;
-                padding: 3.5vw;
-                text-decoration: none;
-                border-radius: 3vw;
-                color: white;
-                border-color: white;
-                border-width: 2px;
-                border-style: solid;
-            }
-
-            #latest {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                border-style: solid;
-                border-width: 0px;
-                margin: 5vw;
-                border-radius: 7vw;
-                background-color: rgba(24, 41, 73, 0.3);
-                color: #ffffff;
-                padding-bottom: 7vw;
-                padding-top: 3vw;
-                backdrop-filter: blur(8px);
-            }
-
-            #latest h2 {
-                font-size: 8vw;
-                text-align: center;
-                color: white;
-                line-height: 0.3;
-            }
-
-            #latest p {
-                font-size: 3.5vw;
-            }
-
-            #latest iframe {
-                width: 80%;
-                border-radius: 6vw;
-                height: 20vh;
-            }
-            
-            #aboutus {
-                background-color: rgba(24, 41, 73, 0.3);
-                backdrop-filter: blur(8px);
-                color: white;
-                text-align: center;
-                border-top-style: solid;
-                border-width: 1px;
-                border-bottom-style: solid;
-                border-color: rgb(58, 60, 83);
-                scroll-margin-top: 23vw;
-            }
-
-            #aboutus h2 {
-                font-size: 4.5vw;
-            }
-
-            #aboutus p {
-                font-size: 3.2vw;
-                padding-inline: 3.5vw;
-                color: rgb(193, 199, 233);
-                padding-bottom: 2vw;
-            }
-
-            .info {
-                background-color: rgba(24, 41, 73, 0.3);
-                backdrop-filter: blur(8px);
-                color: white;
-                text-align: center;
-                border-top-style: solid;
-                border-width: 1px;
-                border-bottom-style: solid;
-                border-color: rgb(58, 60, 83);
-                width: 50%;
-                box-sizing: border-box;
-            }
-
-            .info-row {
-                display: flex;
-                width: 100%;
-                margin-bottom: 9vw;
-            }
-
-            .info h2 {
-                padding-top: 1vw;
-                font-size: 3vw;
-            }
-
-            .info p {
-                font-size: 3.2vw;
-                padding-inline: 3.5vw;
-                color: rgb(193, 199, 233);
-                padding-bottom: 0.7vw;
-            }
-
-            #kikaku {
-                scroll-margin-top: 23vw;
-            }
-
-            #contents {
-                display: flex;
-                align-items: center;
-                gap: 2vw;
-                padding-inline: 5vw;
-            }
-
-            #contents h1 {
-                font-size: 7vw;
-                text-align: left;
-                margin: 0;
-            }
-
-            #contents h2 {
-                padding-top: 2.5vw;
-                font-size: 3vw;
-                margin: 0;
-            }
-
-            .radio_contents {
-                position: relative;
-                margin-top: 4vw;
-                width: 80%;
-                margin-inline: auto;
-                background-color: rgba(24, 41, 73, 0.3);
-                backdrop-filter: blur(8px);
-                padding-inline: 7vw;
-                padding-top: 5vw;
-                line-height: 0.4;
-            }
-
-            .radio_contents h2 {
-                font-size: 2.5vw;
-                font-weight: 100;
-            }
-
-            .radio_contents h1 {
-                font-size: 5vw;
-            }
-
-            .radio_contents p {
-                font-size: 3vw;
-                margin-top: 7vw;
-                padding-bottom: 7vw;
-                line-height: 1.7;
-            }
-
-            .radio_contents a {
-                position: absolute;
-                top: 6vw;
-                right: 6vw;
-                background-color: white;
-                color: #000000;
-                padding: 3vw 2vw;
-                text-decoration: none;
-                font-size: 3vw;
-            }
-
-        </style>
+        <meta name="robot" content="noindex, nofollow">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body id="top">
-            <header>
-                <a href="#top"><img src="https://gekkori-11.github.io/co2radio/images/logo_website.png" alt="CO₂れいでぃお_logo" width="25%"></a>
-                <nav id="menu">
-                    <a href="#top">トップ</a>
-                    <a href="#aboutus">番組について</a>
-                    <a href="#kikaku">各種募集</a>
-                </nav> 
-            </header>
-            <main>
-                <img src="https://gekkori-11.github.io/co2radio/images/icon.png" id="icon" alt="CO₂れいでぃお_icon">
-                <div class="about">
-                    <p>トークやさまざまな企画をお届けしている<br>ラジオ番組。毎週ゲストを招きながら、<br>雑談を中心に企画を行っています</p>
-                </div>
-                <nav id="top_btn">
-                        <a href="#urls" id="urls_btn">配信・関連リンク</a>
-                        <a href="#kikaku" id="kikaku_btn">企画に参加する</a>
-                </nav>
-            </main>
-            <div id="aboutus">
-                <h2>——— 番組について ———</h2>
-                <p>CO₂れいでぃおは、YouTubeにて配信活動を行っている雑談ラジオ番組です。メインパーソナリティーのgekkoriを中心に、毎週一人ゲストを招いて様々な企画を展開しています。
-                </p>
+        <div id="pin">
+            <p>番組オリジナルピンバッジが絶賛販売中です！<br>受付は11月末までなのでお早めにお申し込みを。</p>
+            <a href="https://forms.gle/ksPhumhQ9shrq3PG7" target="_blank">ピンバッジ購入はこちらから↗</a>
+        </div>
+        <header>
+            <a href="#top"><img src="https://gekkori-11.github.io/co2radio/images/logo_website.png" alt="CO₂れいでぃお_logo" width="25%"></a>
+            <nav id="menu">
+                <a href="#top">トップ</a>
+                <a href="#aboutus">番組について</a>
+                <a href="#kikaku">各種募集</a>
+            </nav> 
+        </header>
+        <main>
+            <img src="https://gekkori-11.github.io/co2radio/images/icon.png" id="icon" alt="CO₂れいでぃお_icon">
+            <div class="about">
+                <p>トークやさまざまな企画をお届けしている<br>ラジオ番組。毎週ゲストを招きながら、<br>雑談を中心に企画を行っています</p>
             </div>
-            <div class="info-row">
-                <div class="info" style="border-right-style: solid; border-width: 1px; border-color: rgb(58, 60, 83);">
-                    <h2>—— パーソナリティー ——</h2>
-                    <p style="font-size: 4vw; padding-top: 0.8vw;">gekkori & Guest</p>
-                </div>
-                <div class="info" style="border-left-style: solid; border-width: 1px; border-color: rgb(58, 60, 83);">
-                    <h2>——— 配信情報 ———</h2>
-                    <p style="line-height: 1.5;">毎週土曜 20:00~<br>On YouTube Live</p>
-                </div>
+            <nav id="top_btn">
+                    <a href="#urls" id="urls_btn">配信・関連リンク</a>
+                    <a href="#kikaku" id="kikaku_btn">企画に参加する</a>
+            </nav>
+        </main>
+        <div id="aboutus">
+            <h2>——— 番組について ———</h2>
+            <p>CO₂れいでぃおは、YouTubeにて配信活動を行っている雑談ラジオ番組です。メインパーソナリティーのgekkoriを中心に、毎週一人ゲストを招いて様々な企画を展開しています。
+            </p>
+        </div>
+        <div class="info-row">
+            <div class="info" style="border-right-style: solid; border-width: 1px; border-color: rgb(58, 60, 83);">
+                <h2>—— パーソナリティー ——</h2>
+                <p style="font-size: 4vw; padding-top: 0.8vw;">gekkori & Guest</p>
             </div>
-            <div id="kikaku">
-                <div id="contents">
-                    <h1>CONTENTS</h1>
-                    <h2>— 番組企画 —</h2>
-                </div>
-                <div class="radio_contents">
-                    <h2>01 / MUSIC</h2><br>
-                    <h1>リクエスト曲</h1>
-                    <a href="https://forms.gle/jACLkdjQcvMULKSy7">リクエスト曲募集　↗</a>
-                    <p>リスナーから募集したリクエスト曲を放送します。</p>
-                </div>
-                <div class="radio_contents">
-                    <h2>02 / MESSAGE</h2><br>
-                    <h1>お便りのコーナー</h1>
-                    <a href="https://forms.gle/jACLkdjQcvMULKSy7">お便り募集　↗</a>
-                    <p>リスナーからのお便りを紹介。パーソナリティーへの質問や報告など、どんな内容でも気軽に送ってください。</p>
-                </div>
-                <div class="radio_contents">
-                    <h2>03 / SPECIAL CONTENTS</h2><br>
-                    <h1>特別企画</h1>
-                    <a href="https://forms.gle/jACLkdjQcvMULKSy7">特別企画　↗</a>
-                    <p>不定期に開催する特別な企画。いつもとはひと味違うコンテンツをお届けしています。</p>
-                </div>
+            <div class="info" style="border-left-style: solid; border-width: 1px; border-color: rgb(58, 60, 83);">
+                <h2>——— 配信情報 ———</h2>
+                <p style="line-height: 1.5;">毎週土曜 20:00~<br>On YouTube Live</p>
             </div>
-            <div id="latest">
-                <h2>Latest Episode</h2>
-                <p>【第9.5夜】降板するのかな？【しおれい】</p>
-                <iframe src="https://drive.google.com/file/d/1sWKkFHNTgstRxOzEE2bOMAg3bYDVRMwb/preview"></iframe>
+        </div>
+        <div id="kikaku">
+            <div id="contents">
+                <h1>CONTENTS</h1>
+                <h2>— 番組企画 —</h2>
             </div>
+            <div class="radio_contents">
+                <h2>01 / MUSIC</h2><br>
+                <h1>リクエスト曲</h1>
+                <a href="https://forms.gle/jACLkdjQcvMULKSy7" target="_blank">リクエスト曲募集　↗</a>
+                <p>リスナーから募集したリクエスト曲を放送します。</p>
+            </div>
+            <div class="radio_contents">
+                <h2>02 / MESSAGE</h2><br>
+                <h1>お便りのコーナー</h1>
+                <a href="https://forms.gle/jACLkdjQcvMULKSy7" target="_blank">お便り募集　↗</a>
+                <p>リスナーからのお便りを紹介。パーソナリティーへの質問や報告など、どんな内容でも気軽に送ってください。</p>
+            </div>
+            <div class="radio_contents">
+                <h2>03 / SPECIAL CONTENTS</h2><br>
+                <h1>特別企画</h1>
+                <a href="https://forms.gle/jACLkdjQcvMULKSy7" target="_blank">特別企画　↗</a>
+                <p>不定期に開催する特別な企画。いつもとはひと味違うコンテンツをお届けしています。</p>
+            </div>
+        </div>
+        <div id="latest">
+            <h2>— Latest Episode —</h2>
+            <iframe src="https://drive.google.com/file/d/1sWKkFHNTgstRxOzEE2bOMAg3bYDVRMwb/preview"></iframe>
+            <a href="https://drive.google.com/drive/folders/1xFY8eHpVesklM4jAl8js6-OETw7mwrNL" target="_blank">その他アーカイブはこちら　↗</a>
+        </div>
+        <div id="last">
+            <p>©Scoria Copo. All Rights Reserved.</p>
+        </div>
     </body>
 </html>
