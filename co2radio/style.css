@@ -127,8 +127,15 @@ main h1 {
     font-size: 6vw;
     text-align: center;
     color: white;
-    line-height: 0.5;
+    line-height: 1;
     margin-bottom: 10vw;
+}
+
+#latest p {
+    display: flex;
+    position: absolute;
+    top: 14vw;
+    font-size: 3vw;
 }
 
 #latest iframe {
