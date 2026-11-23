@@ -59,7 +59,6 @@ main h1 {
     justify-content: center;
     text-align: center;
     margin-top: 0;
-    padding-bottom: 1vh;
 }
 
 #icon {
@@ -84,7 +83,6 @@ main h1 {
     justify-content: center;
     align-items: center;
     gap: 7vw;
-    margin-bottom: 10vw;
 }
 
 #guest_btn {
@@ -389,4 +387,21 @@ main h1 {
 
 #guest {
     scroll-margin-top: 17vw;
+}
+
+#history {
+    display: flex;
+    width: fit-content;
+    margin-top: 7vw;
+    margin-bottom: 10vw;
+    margin-inline: auto;
+    justify-content: center;
+    text-align: center;
+    padding: 3.5vw;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(30, 50, 88, 0.6);
+    backdrop-filter: blur(8px);
+    font-size: 3.5vw;
+    border-radius: 3.5vw;
 }
