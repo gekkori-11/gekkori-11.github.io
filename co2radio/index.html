@@ -40,6 +40,37 @@
             </nav>
         </main>
         <a href="https://gekkori-11.github.io/co2radio/hisory" id="history" onclick="alert('「番組の歴史サイト」は現在制作中です。公開までお待ちください。'); return false;">番組の歴史を見る↗<p>※現在制作中</p></a>
+        <div id="jikai">
+            <h1>—— 次回配信のお知らせ ——</h1>
+            <h1 id="onair" hidden></h1>
+            <div id="thumbnail">
+                <img src="images/サムネ.png" alt="thumbnail">
+                <h2 id="No">...</h2>
+            </div>
+            <h4 id="title">読み込み中...</h4>
+            <div id="jikai_row">
+                <div class="jikai_contents">
+                    <h3>— パーソナリティー —</h3>
+                    <p id="personality">読み込み中...</p>
+                </div>
+                <div class="jikai_contents">
+                    <h3>— 日時 —</h3>
+                    <p id="time">読み込み中...</p>
+                </div>
+                <div class="jikai_contents">
+                    <h3>— 次回のゲスト —</h3>
+                    <p id="guest_name">読み込み中...</p>
+                </div>
+                <div class="jikai_contents">
+                    <h3>— 次回の特別企画 —</h3>
+                    <p id="special_contents">読み込み中...</p>
+                </div>
+            </div>
+            <div id="jikai_btn">
+                <a href="https://www.youtube.com/@co2rararadio" id="youtube" target="_blank">YouTubeチャンネル↗</a>
+                <a id="link_url" href="#" target="_blank">配信はこちらから↗</a>
+            </div>
+        </div>
         <div id="aboutus">
             <h2>——— 番組について ———</h2>
             <p>CO₂れいでぃおは、YouTubeにて配信活動を行っている雑談ラジオ番組です。メインパーソナリティーのgekkoriを中心に、毎週一人ゲストを招いて様々な企画を展開しています。
@@ -108,4 +139,26 @@
             <p>©Scoria Corp. All Rights Reserved.</p>
         </div>
     </body>
+    <script>
+    const API_URL = 'https://script.google.com/macros/s/AKfycby4KpkBj0KmYAgDsRRV29pstG-6VuhCsOvsY8QPTUCu2hcq77GxKFIgNTzSVOgP5d0Y/exec';
+
+    fetch(API_URL)
+        .then(res => res.json())
+        .then(data => {
+            Object.keys(data).forEach(id => {
+                const el = document.getElementById(id);
+                if (!el) return;
+
+                if (el.tagName === 'A') {
+                    if (data[id]) el.href = data[id];
+                } else {
+                    el.textContent = data[id];
+                }
+            });
+
+            const onair = document.getElementById('onair');
+            if (onair) onair.hidden = !onair.textContent.trim();
+        })
+        .catch(err => console.error('取得エラー:', err));
+    </script>
 </html>
