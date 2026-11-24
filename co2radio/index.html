@@ -22,7 +22,7 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCGpqM9r7E-FqfSiBQMYID51C6eKis41_RWFOS7D22WmQAJQ/viewform" target="_blank">ピンバッジ購入はこちらから↗</a>
         </div>
         <header>
-            <a href="#top"><img src="images/logo_website.png" alt="CO₂れいでぃお_logo" width="17%"></a>
+            <a href="#top"><img src="images/logo_website.png" alt="CO₂れいでぃお_logo" id="upperleftimg"></a>
             <nav id="menu">
                 <a href="#top">トップ</a>
                 <a href="#aboutus">番組について</a>
@@ -140,25 +140,33 @@
         </div>
     </body>
     <script>
-    const API_URL = 'https://script.google.com/macros/s/AKfycby4KpkBj0KmYAgDsRRV29pstG-6VuhCsOvsY8QPTUCu2hcq77GxKFIgNTzSVOgP5d0Y/exec';
+        const isPC =
+            window.matchMedia("(min-width: 768px)").matches &&
+            window.matchMedia("(pointer: fine)").matches;
 
-    fetch(API_URL)
-        .then(res => res.json())
-        .then(data => {
-            Object.keys(data).forEach(id => {
-                const el = document.getElementById(id);
-                if (!el) return;
+        if (isPC && !location.pathname.startsWith("/co2radio/pc")) {
+            location.replace("/co2radio/pc/");
+        }
 
-                if (el.tagName === 'A') {
-                    if (data[id]) el.href = data[id];
-                } else {
-                    el.textContent = data[id];
-                }
-            });
+        const API_URL = 'https://script.google.com/macros/s/AKfycby4KpkBj0KmYAgDsRRV29pstG-6VuhCsOvsY8QPTUCu2hcq77GxKFIgNTzSVOgP5d0Y/exec';
 
-            const onair = document.getElementById('onair');
-            if (onair) onair.hidden = !onair.textContent.trim();
-        })
-        .catch(err => console.error('取得エラー:', err));
+        fetch(API_URL)
+            .then(res => res.json())
+            .then(data => {
+                Object.keys(data).forEach(id => {
+                    const el = document.getElementById(id);
+                    if (!el) return;
+
+                    if (el.tagName === 'A') {
+                        if (data[id]) el.href = data[id];
+                    } else {
+                        el.textContent = data[id];
+                    }
+                });
+
+                const onair = document.getElementById('onair');
+                if (onair) onair.hidden = !onair.textContent.trim();
+            })
+            .catch(err => console.error('取得エラー:', err));
     </script>
 </html>

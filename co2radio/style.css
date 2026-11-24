@@ -18,6 +18,10 @@ header {
     z-index: 1000;
 }
 
+#upperleftimg {
+    width: 18vw;
+}
+
 body {
     background-color: #051636;
     background-image:
