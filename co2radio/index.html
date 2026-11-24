@@ -32,9 +32,8 @@
         </header>
         <main>
             <img src="images/icon.png" id="icon" alt="CO₂れいでぃお_icon">
-             <div id="visitor">
-                <p>Visitor Counter</p>
-                <h1 id="visitor-count">Loading...</h1>
+            <div class="about">
+                <p>トークやさまざまな企画をお届けしている<br>ラジオ番組。毎週ゲストを招きながら、<br>雑談を中心に企画を行っています</p>
             </div>
             <nav id="top_btn">
                     <a href="#guest" id="guest_btn">ゲスト出演応募</a>
@@ -152,13 +151,13 @@
 
         const API_URL = 'https://script.google.com/macros/s/AKfycby4KpkBj0KmYAgDsRRV29pstG-6VuhCsOvsY8QPTUCu2hcq77GxKFIgNTzSVOgP5d0Y/exec';
 
-        fetch(API_URL)
+        const counterRequest = new Image();
+        counterRequest.src =
+            API_URL + '?counter=1&_=' + Date.now();
+
+        fetch(API_URL + '?data=1&_=' + Date.now())
             .then(res => res.json())
             .then(data => {
-                if (data.ok === false) {
-                    throw new Error(data.error || '訪問数の取得に失敗しました');
-                }
-
                 Object.keys(data).forEach(id => {
                     const el = document.getElementById(id);
                     if (!el) return;
@@ -170,21 +169,11 @@
                     }
                 });
 
-                const visitorCount =
-                    document.getElementById('visitor-count');
-
-                if (visitorCount) {
-                    visitorCount.textContent =
-                        String(data.count).padStart(9, '0');
-                }
-
                 const onair = document.getElementById('onair');
                 if (onair) onair.hidden = !onair.textContent.trim();
             })
             .catch(err => {
                 console.error('取得エラー:', err);
-                const visitorCount = document.getElementById('visitor-count');
-                if (visitorCount) visitorCount.textContent = '取得できません';
             });
     </script>
 </html>
