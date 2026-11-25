@@ -172,11 +172,21 @@
                     }
                 });
 
+                const visitorCount =
+                    document.getElementById('visitor-count');
+
+                if (visitorCount) {
+                    visitorCount.textContent =
+                        String(data.count).padStart(9, '0');
+                }
+
                 const onair = document.getElementById('onair');
                 if (onair) onair.hidden = !onair.textContent.trim();
             })
             .catch(err => {
                 console.error('取得エラー:', err);
+                const visitorCount = document.getElementById('visitor-count');
+                if (visitorCount) visitorCount.textContent = '取得できません';
             });
     </script>
 </html>
